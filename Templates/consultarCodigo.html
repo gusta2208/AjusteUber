@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+</head>
+<body>
+    <form action="/consultarCodigo.html" method="POST">
+      <label name="lCpf"> CPF: </label>
+      <input type="number" name="tCpf"/>
+      <button type="submit"> Consultar </button>
+    </form>
+    <p> {{ dados }}</p>
+</body>
+</html>

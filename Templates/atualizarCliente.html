@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+</head>
+<body>
+    <form action="/atualizarCliente.html" method="POST">
+        <label> CPF: </label>
+        <input type="number" min="1" name="tCpf" maxlength="5" />
+        <br><br>
+        <label> Campo: </label>
+        <select name="tCampo">
+            <option value="nome">Nome</option>
+            <option value="telefone">Telefone</option>
+            <option value="endereco">Endereço</option>
+
+        </select>
+        <br><br>
+        <label> Novo Dado: </label>
+        <input type="text" name="tNovoDado" placeholder="2022-02-29"/>
+        <br><br>
+        <button type="submit"> Atualizar </button>
+    </form>
+    <h6>{{ resultado }}</h6>
+</body>
+</html>
