@@ -11,49 +11,41 @@
   <nav class="navbar navbar-light bg-light"  >
     <span class="navbar-brand mb-0 h1" > Uber</span><br>
   </nav><br><br>
+  <form role="form" action="menuMotorista.html" method="post">
 <div style="text-align: center;" style="color: rgb(0, 0, 0);"><h1> Menu Motorista </h1><br><br><br></div>
   <div class="container-md">
     <div style="text-align:center">
       <div style="margin-top: 30px;" class="d-grid gap-4 justify-content-center">
 
         <form action="./MenuMotorista.html" method="POST">
-        <a href="atualizar.html"> <button type="button" style="width: 300px;" data-bs-toggle="modal" data-bs-target="#modalnome" class="btn btn-dark">Atualizar Dados</button><br></a><br>
+        <a href="atualizar.html"> <button type="button" style="width: 300px;" data-bs-toggle="modal" data-bs-target="#modalnome" class="btn btn-dark">Atualizar Dados</button></a><br>
 
-        <a href="consultarCodigo.html"> <button type="button" style="width: 300px;" data-bs-toggle="modal" data-bs-target="#modalnome" class="btn btn-dark">Consultar Dados</button><br></a><br>
+        <a href="consultarCodigo.html"> <button type="button" style="width: 300px;" data-bs-toggle="modal" data-bs-target="#modalnome" class="btn btn-dark">Consultar Dados</button></a><br>
     
       
-        <button data-bs-toggle="modal" data-bs-target="#modalexcluir" class="btn btn-dark" onclick="myFunction1()" style="width: 300px;">Disponível</button><br><br>
-        <button data-bs-toggle="modal" data-bs-target="#modalexcluir" class="btn btn-dark" onclick="myFunction()" style="width: 300px;">Indisponível</button><br><br>
-        
-        <a href="menu.html"><button type="button" style="width: 300px;" data-bs-toggle="modal" data-bs-target="#modalexcluir" class="btn btn-dark"> Voltar </button><br><br></a>
+        <button data-bs-toggle="modal" data-bs-target="#modalexcluir" class="btn btn-dark" onclick="myFunction1()" style="width: 300px;">Disponível</button><br>
+        <button data-bs-toggle="modal" data-bs-target="#modalexcluir" class="btn btn-dark" onclick="myFunction()" style="width: 300px;">Indisponível</button><br>
+        <a href="excluir.html"><button type="button"  style="width: 300px;" data-bs-toggle="modal" data-bs-target="#modalexcluir" class="btn btn-dark">Excluir Conta</button></a><br>
+        <a href="menu.html"><button type="button" style="width: 300px;" data-bs-toggle="modal" data-bs-target="#modalexcluir" class="btn btn-dark"> Voltar </button></a><br>
 
-        <a href="excluir.html"><button type="button"  style="width: 300px;" data-bs-toggle="modal" data-bs-target="#modalexcluir" class="btn btn-dark">Excluir Conta</button><br><br></a>
+        
         <script>
           function myFunction1() {
             alert("Motorista está Disponível");
           }
           </script>
 
-<script>
-function myFunction() {
-  alert("Motorista está Indisponível");
-}
-</script>
-</form>
-
-
-
-
-
-
-
-        
-
-
-
-
-
+        <script>
+        function myFunction() {
+          alert("Motorista está Indisponível");
+        }
+        </script>
       </div>
+    </div>
   </div>
+
+
+ </form>
 </body>
+
 </html>

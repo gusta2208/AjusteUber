@@ -69,7 +69,7 @@ def consultar(cpf):
         this.msg = "Nenhum dado Encontrado!"
         for(cpf, nome, telefone, endereco, modelo, placa, dataDeNascimento, senha) in con:
             if int(cpf) == int(cpf):
-                this.msg = "Cpf: {}, Nome: {}, Telefone: {}, Endereço: {}, Modelo: {}, Placa: {}, Data de Nascimento: {}, Senha: {},"  .format(cpf, nome, telefone, endereco, modelo, placa, dataDeNascimento, senha)
+                this.msg = "Cpf: {} / Nome: {} / Telefone: {} / Endereço: {} / Modelo: {} / Placa: {} / Data de Nascimento: {} / Senha: {}"  .format(cpf, nome, telefone, endereco, modelo, placa, dataDeNascimento, senha)
                 return this.msg
         return this.msg
     except Exception as erro:

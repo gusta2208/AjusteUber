@@ -1,10 +1,41 @@
 import mysql.connector
 import this
 
+
 import conexao
 this.contador = 0
 db_connection = conexao.conectar() #Abrindo a conexão com o banco de dados
 con = db_connection.cursor()
+
+def loginCliente(cpf, senha):
+    try:
+        sql = "select senha from cliente where cpf = '{}';".format(cpf, senha)
+        con.execute(sql)
+
+        for (senha) in con:
+            if this.senha == senha[this.contador]:
+                permissao = True
+            else:
+                permissao = False
+            this.contador += 1
+        return permissao
+    except Exception as erro:
+        print
+
+
+def loginValidado(cpf, senha):
+    try:
+        sql = "select senha from cliente where cpf = '{}';".format(this.cpf)
+        con.execute(sql) # prepara o comando para ser executado
+
+        for (senha) in con:
+            print(senha[0])
+            if this.senha == senha[0]:
+
+    except Exception as erro:
+        print(erro)
+    print("CPF ou senha inválidos ou não cadastrados, tente novamente!!")
+    loginValidado(cpf, senha)
 
 def inserir(cpf, nome, telefone, endereco, dataNascimento, senha):
     try:

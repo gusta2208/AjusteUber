@@ -22,7 +22,23 @@ cliente = Flask(__name__) #Representando uma variável do tipo flask
 
 @cliente.route('/', methods=['GET','POST'])
 def menu():
-    return render_template('menu.html', titulo='Página Principal', resultado=this.dados)
+    return render_template('menu.html', titulo='Página Principal')
+
+@cliente.route('/menu.html', methods=['GET','POST'])
+def menu2():
+    return render_template('menu.html', titulo='Página Principal')
+
+@cliente.route('/loginCliente.html', methods=['GET','POST'])
+def loginCliente():
+    if request.method == 'POST':
+        this.cpf = request.form['tCpf']
+        this.senha = request.form['tSenha']
+        this.dados = conexaoCliente.loginValidado(this.cpf, this.senha)
+    return render_template('loginCliente.html', titulo='login Cliente')
+
+@cliente.route('/menuCliente.html', methods=['GET','POST'])
+def menuCliente():
+    return render_template('menuCliente.html', titulo='Menu Cliente')
 
 @cliente.route('/indexBoot.html', methods=['GET','POST'])
 def cadastrar():
@@ -35,6 +51,7 @@ def cadastrar():
         this.senha = request.form['tNovoSenha']
         this.dados    = conexaoCliente.inserir(this.cpf, this.nome, this.telefone, this.endereco, this.dataNascimento, this.senha)
     return render_template('indexBoot.html', titulo='Página Principal', resultado=this.dados)
+
 
 @cliente.route('/motoristaCadastro.html', methods=['GET','POST'])
 def cadastroMotorista():
@@ -50,6 +67,10 @@ def cadastroMotorista():
         this.dados = operacoes.cadastrarMotorista(this.cpf, this.nome, this.telefone, this.endereco, this.modelo, this.placa, this.dataNascimento, this.senha)
     return render_template('motoristaCadastro.html', titulo='Cadastro Motorista', resultado=this.dados)
 
+
+@cliente.route('/menuMotorista.html', methods=['GET','POST'])
+def motoristaMenu():
+    return render_template('menuMotorista.html', titulo='Menu Motorista')
 
 
 @cliente.route('/atualizar.html', methods=['GET','POST'])
@@ -70,7 +91,7 @@ def atualizarDadosCliente():
         this.dado = conexaoCliente.atualizar(this.cpf, this.campo, this.nDado)
     return render_template('atualizarCliente.html', titulo='Atualizar', resultado=this.dado)
 
-@cliente.route('/consultarCodigo', methods=['GET','POST'])
+@cliente.route('/consultarCodigo.html', methods=['GET','POST'])
 def consultarIndividual():
     if request.method == 'POST':
         this.cpf = request.form['tCpf']
@@ -79,11 +100,11 @@ def consultarIndividual():
         this.mensagem = ""
     return render_template('consultarCodigo.html', titulo='Consultar por cpf', dados=this.mensagem)
 
-@cliente.route('/consultarCliente', methods=['GET','POST'])
+@cliente.route('/consultarCliente.html', methods=['GET','POST'])
 def consultarCliente():
     if request.method == 'POST':
         this.cpf = request.form['tCpf']
-        this.mensagem = operacoes.consultar(this.cpf)
+        this.mensagem = conexaoCliente.consultar(this.cpf)
     else:
         this.mensagem = ""
     return render_template('consultarCliente.html', titulo='Consultar por cpf', dados=this.mensagem)
